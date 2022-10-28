@@ -18,20 +18,27 @@ class Program
         {
             for (int column = 0; column < columns; column++)
             {
-                Console.WriteLine("grid[{0}, {1}] = " , row, column);
-                grid[row, column] = int.Parse(Console.ReadLine()) ;
+                Console.WriteLine("grid[{0}, {1}] = ", row, column);
+                grid[row, column] = int.Parse(Console.ReadLine());
+
+                PrintGrid(rows, columns, grid);
             }
         }
 
+        PrintGrid(rows, columns, grid);
+
+    }
+
+    private static void PrintGrid(int rows, int columns, int[,] grid)
+    {
         // print the grid
         for (int r = 0; r < rows; r++)
         {
             for (int c = 0; c < columns; c++)
             {
-                Console.Write(grid[r,c] + " ");
+                Console.Write(grid[r, c] + " ");
             }
             Console.WriteLine();
         }
-
     }
 }
